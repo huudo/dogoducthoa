@@ -12,43 +12,43 @@ class SubCategoryTableSeeder extends Seeder
      */
     public function run()
     {
-        $category_health = Category::where('name','health')->first();
-        $category_beauty = Category::where('name','beauty')->first();
-        $category_lovely = Category::where('name','lovely')->first();
+        $category_health = Category::where('name','noi-that')->first();
+        $category_beauty = Category::where('name','noi-that')->first();
+        $category_lovely = Category::where('name','noi-that')->first();
 
         $sub = new SubCategory();
-        $sub->name = 'mypham';
-        $sub->description = "Mỹ phẩm";
+        $sub->name = 'tranh-go';
+        $sub->description = "Tranh gỗ";
         $sub->category_id = $category_beauty->id;
         $sub->save();
 
         $sub = new SubCategory();
-        $sub->name = 'quanao';
-        $sub->description = "Quần áo";
+        $sub->name = 'tu-ke';
+        $sub->description = "Tủ kệ";
         $sub->category_id = $category_beauty->id;
         $sub->save();
 
         $sub = new SubCategory();
-        $sub->name = 'trangsuc';
-        $sub->description = "Trang sức";
+        $sub->name = 'ban-an';
+        $sub->description = "Bàn ăn";
         $sub->category_id = $category_beauty->id;
         $sub->save();
 
         $sub = new SubCategory();
-        $sub->name = 'samnam';
-        $sub->description = "Sâm nấm";
+        $sub->name = 'ban-khach';
+        $sub->description = "Bàn phòng khách";
         $sub->category_id = $category_health->id;
         $sub->save();
 
         $sub = new SubCategory();
-        $sub->name = 'linhchi';
-        $sub->description = "Linh chi";
+        $sub->name = 'ghe-an';
+        $sub->description = "Ghế phòng ăn";
         $sub->category_id = $category_health->id;
         $sub->save();
 
         $sub = new SubCategory();
-        $sub->name = 'chucnang';
-        $sub->description = "Thực phẩm chức năng";
+        $sub->name = 'do-tho';
+        $sub->description = "Đồ thờ";
         $sub->category_id = $category_health->id;
         $sub->save();
 

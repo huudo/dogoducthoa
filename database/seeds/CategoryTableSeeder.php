@@ -12,20 +12,13 @@ class CategoryTableSeeder extends Seeder
     public function run()
     {
         $category = new Category();
-      	$category->name = "health";
-      	$category->description = "Khỏe";
+      	$category->name = "noi-that";
+      	$category->description = "Nội thất";
       	$category->save();
 
       	$category = new Category();
-      	$category->name = "beauty";
-      	$category->description = "Đẹp";
-      	$category->save();
-
-      	$category = new Category();
-      	$category->name = "lovely";
-      	$category->description = "Yêu đời";
-      	$category->save();
-
-        
+      	$category->name = "ngoai-that";
+      	$category->description = "Ngoại thất";
+      	$category->save();        
     }
 }

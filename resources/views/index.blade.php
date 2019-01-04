@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('title')
-    Hàng Hàn Quốc nhập khẩu
+    Đồ gỗ Đức Thỏa
 @endsection
 @section('content')
     <div class="header-empty-space"></div>
@@ -9,7 +9,7 @@
         <div class="swiper-button-next visible-lg"></div>
         <div class="swiper-container" data-parallax="1" data-auto-height="1">
            <div class="swiper-wrapper">
-               <div class="swiper-slide">
+               <div class="swiper-slide swiper-slide-01">
                     <div class="container">
                         <div class="row">
                             <div class="col-sm-6">
@@ -32,13 +32,13 @@
                                             <a class="button size-2 style-2" href="">
                                                 <span class="button-wrapper">
                                                     <span class="icon"><img src="#" alt=""></span>
-                                                    <span class="text">Learn More</span>
+                                                    <span class="text">Chi tiết</span>
                                                 </span>
                                             </a>
                                             <a class="button size-2 style-3" href="#">
                                                 <span class="button-wrapper">
                                                     <span class="icon"><i class="fa fa-cart-plus"></i></span>
-                                                    <span class="text">Add To Cart</span>
+                                                    <span class="text">Chọn mua</span>
                                                 </span>
                                             </a>
                                         </div>
@@ -47,7 +47,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="slider-product-preview">
+                        <!-- <div class="slider-product-preview">
                             <div class="product-preview-shortcode">
                                 <div class="preview">
                                     <div class="swiper-lazy-preloader"></div>
@@ -63,37 +63,50 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="empty-space col-xs-b80 col-sm-b0"></div>
                     </div>
                </div>
-
+               <div class="swiper-slide swiper-slide-02">Chọn mua</span>
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-b40 col-sm-b80"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="slider-product-preview">
+                            <div class="product-preview-shortcode">
+                                <div class="preview">
+                                    <div class="swiper-lazy-preloader"></div>
+                                    <div class="entry full-size swiper-lazy active" data-background="#"></div>
+                                    <div class="entry full-size swiper-lazy" data-background="#"></div>
+                                    <div class="entry full-size swiper-lazy" data-background="#"></div>
+                                </div>
+                                <div class="sidebar valign-middle" data-swiper-parallax-x="-300">
+                                    <div class="valign-middle-content">
+                                        <div class="entry active"><img src="#" alt="" /></div>
+                                        <div class="entry"><img src="#" alt="" /></div>
+                                        <div class="entry"><img src="#" alt="" /></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                        <div class="empty-space col-xs-b80 col-sm-b0"></div>
+                    </div>
+               </div>
            </div>
            <div class="swiper-pagination"></div>
         </div>
     </div>
 
     <div class="grey-background">
-        <div class="empty-space col-xs-b40 col-sm-b80"></div>
+        <div class="empty-space col-xs-b20 col-sm-b30"></div>
         <div class="container">
             <div class="row">
                 <div class="col-md-9 col-md-push-3">
                     <div class="tabs-block">
-                        <div class="tabulation-menu-wrapper text-center">
-                            <div class="tabulation-title simple-input">all</div>
-                            <ul class="tabulation-toggle">
-                               <!--  <li><a class="tab-menu active">all</a></li> -->
-                                @foreach($categories as $category)
-                                    @if($category->id == 1)
-                                        <li><a class="tab-menu active">{{$category->description}}</a></li>
-                                    @else
-                                        <li><a class="tab-menu">{{$category->description}}</a></li>
-                                    @endif                                    
-                                @endforeach
-
-                            </ul>
-                        </div>
-                        <div class="empty-space col-xs-b30"></div>
                         <div class="tab-entry visible">
                             <div class="row nopadding">
                                 @foreach ($products as $product)
@@ -109,31 +122,26 @@
                                                 <div class="valign-middle-content">
                                                     <a class="button size-2 style-2" href="#">
                                                         <span class="button-wrapper">
-                                                            <span class="icon"><img src="#" alt=""></span>
-                                                            <span class="text">Learn More</span>
+                                                            <span class="icon"><i class="fas fa-eye"></i></span>
+                                                            <span class="text">Chi tiết</span>
                                                         </span>
                                                     </a>
                                                     <a class="button size-2 style-3 add-to-card" href="#" data-href = "/add-to-cart/{{$product->id}}">
                                                         <span class="button-wrapper">
                                                             <span class="icon"><i class="fa fa-cart-plus"></i></span>
-                                                            <span class="text">Add To Cart</span>
+                                                            <span class="text">Chọn mua</span>
                                                         </span>
                                                     </a>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="price">
-                                            <div class="simple-article size-4 dark">$ {{$product->price}}</div>
+                                            <div class="simple-article size-4 dark">Giá: {{number_format($product->price,0)}} VNĐ</div>
                                         </div>
                                         <div class="description">
                                             <div class="simple-article text size-2">
                                                 {{$product->sort_description}}
-                                            </div>
-                                            <div class="icons">
-                                                <a class="entry"><i class="fa fa-check" aria-hidden="true"></i></a>
-                                                <a class="entry open-popup" data-rel="3"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                                <a class="entry"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                                            </div>
+                                            </div>                                        
                                         </div>
                                     </div>  
                                 </div>
@@ -155,13 +163,13 @@
                                                     <a class="button size-2 style-2" href="#">
                                                         <span class="button-wrapper">
                                                             <span class="icon"><img src="#" alt=""></span>
-                                                            <span class="text">Learn More</span>
+                                                            <span class="text">Chi tiết</span>
                                                         </span>
                                                     </a>
                                                     <a class="button size-2 style-3" href="#">
                                                         <span class="button-wrapper">
                                                             <span class="icon"><i class="fa fa-cart-plus"></i></span>
-                                                            <span class="text">Add To Cart</span>
+                                                            <span class="text">Chọn mua</span>
                                                         </span>
                                                     </a>
                                                 </div>
@@ -193,13 +201,13 @@
                                                     <a class="button size-2 style-2" href="#">
                                                         <span class="button-wrapper">
                                                             <span class="icon"><img src="#" alt=""></span>
-                                                            <span class="text">Learn More</span>
+                                                            <span class="text">Chi tiết</span>
                                                         </span>
                                                     </a>
                                                     <a class="button size-2 style-3" href="#">
                                                         <span class="button-wrapper">
                                                             <span class="icon"><i class="fa fa-cart-plus"></i></span>
-                                                            <span class="text">Add To Cart</span>
+                                                            <span class="text">Chọn mua</span>
                                                         </span>
                                                     </a>
                                                 </div>
@@ -231,13 +239,13 @@
                                                     <a class="button size-2 style-2" href="#">
                                                         <span class="button-wrapper">
                                                             <span class="icon"><img src="#" alt=""></span>
-                                                            <span class="text">Learn More</span>
+                                                            <span class="text">Chi tiết</span>
                                                         </span>
                                                     </a>
                                                     <a class="button size-2 style-3" href="#">
                                                         <span class="button-wrapper">
                                                             <span class="icon"><i class="fa fa-cart-plus"></i></span>
-                                                            <span class="text">Add To Cart</span>
+                                                            <span class="text">Chọn mua</span>
                                                         </span>
                                                     </a>
                                                 </div>
@@ -273,13 +281,13 @@
                                                     <a class="button size-2 style-2" href="#">
                                                         <span class="button-wrapper">
                                                             <span class="icon"><img src="#" alt=""></span>
-                                                            <span class="text">Learn More</span>
+                                                            <span class="text">Chi tiết</span>
                                                         </span>
                                                     </a>
                                                     <a class="button size-2 style-3" href="#">
                                                         <span class="button-wrapper">
                                                             <span class="icon"><img src="#" alt=""></span>
-                                                            <span class="text">Add To Cart</span>
+                                                            <span class="text">Chọn mua</span>
                                                         </span>
                                                     </a>
                                                 </div>
@@ -311,13 +319,13 @@
                                                     <a class="button size-2 style-2" href="#">
                                                         <span class="button-wrapper">
                                                             <span class="icon"><img src="#" alt=""></span>
-                                                            <span class="text">Learn More</span>
+                                                            <span class="text">Chi tiết</span>
                                                         </span>
                                                     </a>
                                                     <a class="button size-2 style-3" href="#">
                                                         <span class="button-wrapper">
                                                             <span class="icon"><img src="#" alt=""></span>
-                                                            <span class="text">Add To Cart</span>
+                                                            <span class="text">Chọn mua</span>
                                                         </span>
                                                     </a>
                                                 </div>
@@ -349,13 +357,13 @@
                                                     <a class="button size-2 style-2" href="#">
                                                         <span class="button-wrapper">
                                                             <span class="icon"><img src="#" alt=""></span>
-                                                            <span class="text">Learn More</span>
+                                                            <span class="text">Chi tiết</span>
                                                         </span>
                                                     </a>
                                                     <a class="button size-2 style-3" href="#">
                                                         <span class="button-wrapper">
                                                             <span class="icon"><img src="#" alt=""></span>
-                                                            <span class="text">Add To Cart</span>
+                                                            <span class="text">Chọn mua</span>
                                                         </span>
                                                     </a>
                                                 </div>
@@ -506,7 +514,7 @@
                                             <a class="button size-1 style-3" href="#">
                                                 <span class="button-wrapper">
                                                     <span class="icon"><img src="" alt=""></span>
-                                                    <span class="text">learn more</span>
+                                                    <span class="text">Chi tiết</span>
                                                 </span>
                                             </a>
                                         </div>
@@ -526,7 +534,7 @@
                                             <a class="button size-1 style-3" href="#">
                                                 <span class="button-wrapper">
                                                     <span class="icon"><img src="" alt=""></span>
-                                                    <span class="text">learn more</span>
+                                                    <span class="text">Chi tiết</span>
                                                 </span>
                                             </a>
                                         </div>
@@ -587,13 +595,13 @@
                                             <a class="button size-2 style-2" href="#">
                                                 <span class="button-wrapper">
                                                     <span class="icon"><img src="" alt=""></span>
-                                                    <span class="text">Learn More</span>
+                                                    <span class="text">Chi tiết</span>
                                                 </span>
                                             </a>
                                             <a class="button size-2 style-3" href="#">
                                                 <span class="button-wrapper">
                                                     <span class="icon"><img src="" alt=""></span>
-                                                    <span class="text">Add To Cart</span>
+                                                    <span class="text">Chọn mua</span>
                                                 </span>
                                             </a>
                                         </div>
@@ -641,13 +649,13 @@
                                             <a class="button size-2 style-2" href="#">
                                                 <span class="button-wrapper">
                                                     <span class="icon"><img src="" alt=""></span>
-                                                    <span class="text">Learn More</span>
+                                                    <span class="text">Chi tiết</span>
                                                 </span>
                                             </a>
                                             <a class="button size-2 style-3" href="#">
                                                 <span class="button-wrapper">
                                                     <span class="icon"><img src="" alt=""></span>
-                                                    <span class="text">Add To Cart</span>
+                                                    <span class="text">Chọn mua</span>
                                                 </span>
                                             </a>
                                         </div>
@@ -695,13 +703,13 @@
                                             <a class="button size-2 style-2" href="#">
                                                 <span class="button-wrapper">
                                                     <span class="icon"><img src="" alt=""></span>
-                                                    <span class="text">Learn More</span>
+                                                    <span class="text">Chi tiết</span>
                                                 </span>
                                             </a>
                                             <a class="button size-2 style-3" href="#">
                                                 <span class="button-wrapper">
                                                     <span class="icon"><img src="" alt=""></span>
-                                                    <span class="text">Add To Cart</span>
+                                                    <span class="text">Chọn mua</span>
                                                 </span>
                                             </a>
                                         </div>
@@ -749,13 +757,13 @@
                                             <a class="button size-2 style-2" href="#">
                                                 <span class="button-wrapper">
                                                     <span class="icon"><img src="" alt=""></span>
-                                                    <span class="text">Learn More</span>
+                                                    <span class="text">Chi tiết</span>
                                                 </span>
                                             </a>
                                             <a class="button size-2 style-3" href="#">
                                                 <span class="button-wrapper">
                                                     <span class="icon"><img src="" alt=""></span>
-                                                    <span class="text">Add To Cart</span>
+                                                    <span class="text">Chọn mua</span>
                                                 </span>
                                             </a>
                                         </div>
@@ -802,13 +810,13 @@
                                                     <a class="button size-2 style-2" href="#">
                                                         <span class="button-wrapper">
                                                             <span class="icon"><img src="" alt=""></span>
-                                                            <span class="text">Learn More</span>
+                                                            <span class="text">Chi tiết</span>
                                                         </span>
                                                     </a>
                                                     <a class="button size-2 style-3" href="#">
                                                         <span class="button-wrapper">
                                                             <span class="icon"><img src="" alt=""></span>
-                                                            <span class="text">Add To Cart</span>
+                                                            <span class="text">Chọn mua</span>
                                                         </span>
                                                     </a>
                                                 </div>
@@ -845,13 +853,13 @@
                                                     <a class="button size-2 style-2" href="#">
                                                         <span class="button-wrapper">
                                                             <span class="icon"><img src="" alt=""></span>
-                                                            <span class="text">Learn More</span>
+                                                            <span class="text">Chi tiết</span>
                                                         </span>
                                                     </a>
                                                     <a class="button size-2 style-3" href="#">
                                                         <span class="button-wrapper">
                                                             <span class="icon"><img src="" alt=""></span>
-                                                            <span class="text">Add To Cart</span>
+                                                            <span class="text">Chọn mua</span>
                                                         </span>
                                                     </a>
                                                 </div>
@@ -883,13 +891,13 @@
                                                     <a class="button size-2 style-2" href="#">
                                                         <span class="button-wrapper">
                                                             <span class="icon"><img src="" alt=""></span>
-                                                            <span class="text">Learn More</span>
+                                                            <span class="text">Chi tiết</span>
                                                         </span>
                                                     </a>
                                                     <a class="button size-2 style-3" href="#">
                                                         <span class="button-wrapper">
                                                             <span class="icon"><img src="" alt=""></span>
-                                                            <span class="text">Add To Cart</span>
+                                                            <span class="text">Chọn mua</span>
                                                         </span>
                                                     </a>
                                                 </div>
@@ -930,13 +938,13 @@
                                                     <a class="button size-2 style-2" href="#">
                                                         <span class="button-wrapper">
                                                             <span class="icon"><img src="" alt=""></span>
-                                                            <span class="text">Learn More</span>
+                                                            <span class="text">Chi tiết</span>
                                                         </span>
                                                     </a>
                                                     <a class="button size-2 style-3" href="#">
                                                         <span class="button-wrapper">
                                                             <span class="icon"><img src="" alt=""></span>
-                                                            <span class="text">Add To Cart</span>
+                                                            <span class="text">Chọn mua</span>
                                                         </span>
                                                     </a>
                                                 </div>
@@ -968,13 +976,13 @@
                                                     <a class="button size-2 style-2" href="#">
                                                         <span class="button-wrapper">
                                                             <span class="icon"><img src="" alt=""></span>
-                                                            <span class="text">Learn More</span>
+                                                            <span class="text">Chi tiết</span>
                                                         </span>
                                                     </a>
                                                     <a class="button size-2 style-3" href="#">
                                                         <span class="button-wrapper">
                                                             <span class="icon"><img src="" alt=""></span>
-                                                            <span class="text">Add To Cart</span>
+                                                            <span class="text">Chọn mua</span>
                                                         </span>
                                                     </a>
                                                 </div>
@@ -1015,13 +1023,13 @@
                                                     <a class="button size-2 style-2" href="#">
                                                         <span class="button-wrapper">
                                                             <span class="icon"><img src="" alt=""></span>
-                                                            <span class="text">Learn More</span>
+                                                            <span class="text">Chi tiết</span>
                                                         </span>
                                                     </a>
                                                     <a class="button size-2 style-3" href="#">
                                                         <span class="button-wrapper">
                                                             <span class="icon"><img src="" alt=""></span>
-                                                            <span class="text">Add To Cart</span>
+                                                            <span class="text">Chọn mua</span>
                                                         </span>
                                                     </a>
                                                 </div>
@@ -1058,13 +1066,13 @@
                                                     <a class="button size-2 style-2" href="#">
                                                         <span class="button-wrapper">
                                                             <span class="icon"><img src="" alt=""></span>
-                                                            <span class="text">Learn More</span>
+                                                            <span class="text">Chi tiết</span>
                                                         </span>
                                                     </a>
                                                     <a class="button size-2 style-3" href="#">
                                                         <span class="button-wrapper">
                                                             <span class="icon"><img src="" alt=""></span>
-                                                            <span class="text">Add To Cart</span>
+                                                            <span class="text">Chọn mua</span>
                                                         </span>
                                                     </a>
                                                 </div>
@@ -1100,13 +1108,13 @@
                                                     <a class="button size-2 style-2" href="#">
                                                         <span class="button-wrapper">
                                                             <span class="icon"><img src="" alt=""></span>
-                                                            <span class="text">Learn More</span>
+                                                            <span class="text">Chi tiết</span>
                                                         </span>
                                                     </a>
                                                     <a class="button size-2 style-3" href="#">
                                                         <span class="button-wrapper">
                                                             <span class="icon"><img src="" alt=""></span>
-                                                            <span class="text">Add To Cart</span>
+                                                            <span class="text">Chọn mua</span>
                                                         </span>
                                                     </a>
                                                 </div>
@@ -1143,13 +1151,13 @@
                                                     <a class="button size-2 style-2" href="#">
                                                         <span class="button-wrapper">
                                                             <span class="icon"><img src="" alt=""></span>
-                                                            <span class="text">Learn More</span>
+                                                            <span class="text">Chi tiết</span>
                                                         </span>
                                                     </a>
                                                     <a class="button size-2 style-3" href="#">
                                                         <span class="button-wrapper">
                                                             <span class="icon"><img src="" alt=""></span>
-                                                            <span class="text">Add To Cart</span>
+                                                            <span class="text">Chọn mua</span>
                                                         </span>
                                                     </a>
                                                 </div>
@@ -1186,13 +1194,13 @@
                                                     <a class="button size-2 style-2" href="#">
                                                         <span class="button-wrapper">
                                                             <span class="icon"><img src="" alt=""></span>
-                                                            <span class="text">Learn More</span>
+                                                            <span class="text">Chi tiết</span>
                                                         </span>
                                                     </a>
                                                     <a class="button size-2 style-3" href="#">
                                                         <span class="button-wrapper">
                                                             <span class="icon"><img src="" alt=""></span>
-                                                            <span class="text">Add To Cart</span>
+                                                            <span class="text">Chọn mua</span>
                                                         </span>
                                                     </a>
                                                 </div>
@@ -1219,7 +1227,7 @@
                 </div>
                 <div class="col-md-3 col-md-pull-9">
 
-                    <div class="h4 col-xs-b25">Danh mục</div>
+                    <div class="h4 col-xs-b25 categories-title"><i class="fas fa-chair"></i> Danh mục</div>
                     <ul class="categories-menu">
                         @foreach($categories as $category)
                             @foreach($category->subcategories as $sub)                           
@@ -1353,13 +1361,13 @@
                                                         <a class="button size-2 style-2" href="#">
                                                             <span class="button-wrapper">
                                                                 <span class="icon"><img src="" alt=""></span>
-                                                                <span class="text">Learn More</span>
+                                                                <span class="text">Chi tiết</span>
                                                             </span>
                                                         </a>
                                                         <a class="button size-2 style-3" href="#">
                                                             <span class="button-wrapper">
                                                                 <span class="icon"><img src="" alt=""></span>
-                                                                <span class="text">Add To Cart</span>
+                                                                <span class="text">Chọn mua</span>
                                                             </span>
                                                         </a>
                                                     </div>
@@ -1392,13 +1400,13 @@
                                                         <a class="button size-2 style-2" href="#">
                                                             <span class="button-wrapper">
                                                                 <span class="icon"><img src="" alt=""></span>
-                                                                <span class="text">Learn More</span>
+                                                                <span class="text">Chi tiết</span>
                                                             </span>
                                                         </a>
                                                         <a class="button size-2 style-3" href="#">
                                                             <span class="button-wrapper">
                                                                 <span class="icon"><img src="" alt=""></span>
-                                                                <span class="text">Add To Cart</span>
+                                                                <span class="text">Chọn mua</span>
                                                             </span>
                                                         </a>
                                                     </div>
@@ -1431,13 +1439,13 @@
                                                         <a class="button size-2 style-2" href="#">
                                                             <span class="button-wrapper">
                                                                 <span class="icon"><img src="" alt=""></span>
-                                                                <span class="text">Learn More</span>
+                                                                <span class="text">Chi tiết</span>
                                                             </span>
                                                         </a>
                                                         <a class="button size-2 style-3" href="#">
                                                             <span class="button-wrapper">
                                                                 <span class="icon"><img src="" alt=""></span>
-                                                                <span class="text">Add To Cart</span>
+                                                                <span class="text">Chọn mua</span>
                                                             </span>
                                                         </a>
                                                     </div>
@@ -1470,13 +1478,13 @@
                                                         <a class="button size-2 style-2" href="#">
                                                             <span class="button-wrapper">
                                                                 <span class="icon"><img src="" alt=""></span>
-                                                                <span class="text">Learn More</span>
+                                                                <span class="text">Chi tiết</span>
                                                             </span>
                                                         </a>
                                                         <a class="button size-2 style-3" href="#">
                                                             <span class="button-wrapper">
                                                                 <span class="icon"><img src="" alt=""></span>
-                                                                <span class="text">Add To Cart</span>
+                                                                <span class="text">Chọn mua</span>
                                                             </span>
                                                         </a>
                                                     </div>
