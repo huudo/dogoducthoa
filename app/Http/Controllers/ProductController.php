@@ -21,12 +21,13 @@ class ProductController extends Controller
         $categories = Category::with('subcategories')->get();
         //$subcategories = SubCategory::all();
         $products = Product::all();
+        $product_new = Product::take(3)->orderBy('id','DESC')->get();
         // $orders = Auth::user()->orders;
         // $orders->transform(function($order,$key){
         //     $order->cart = unserialize($order->cart);
         //     return $order;
         // });
-        return view('index',['categories' => $categories,'products' => $products]);
+        return view('index',['categories' => $categories,'products' => $products,'product_new'=>$product_new]);
     }
     function getDetailProduct($id){
         $product = Product::findBySlug($id);

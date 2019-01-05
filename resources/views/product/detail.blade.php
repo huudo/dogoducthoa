@@ -55,7 +55,7 @@
                                     </div>
                                 </div>
                                 <div class="simple-article size-3 col-xs-b30">
-                                    {{$product->sort_description}}
+                                    <?php echo substr(strip_tags($product->description),0,300) ;?>
                                 </div>
                                 <div class="row col-xs-b40">
                                     <div class="col-sm-3">
@@ -80,11 +80,11 @@
                                     </div>
                                     <div class="col-sm-6">
                                         <a class="button size-2 style-1 block noshadow" href="#">
-                                        <span class="button-wrapper">
-                                            <span class="icon"><i class="fa fa-heart-o" aria-hidden="true"></i></span>
-                                            <span class="text">add to favourites</span>
-                                        </span>
-                                    </a>
+                                            <span class="button-wrapper">
+                                                <span class="icon"><i class="fa fa-heart-o" aria-hidden="true"></i></span>
+                                                <span class="text">add to favourites</span>
+                                            </span>
+                                        </a>
                                     </div>
                                 </div>
                                 <div class="row">

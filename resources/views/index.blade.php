@@ -1242,6 +1242,7 @@
 
                     <div class="row">
                         <div class="col-sm-6 col-md-12">
+                            <div class="h4 col-xs-b25">Ảnh cửa hàng</div>
                             <div class="swiper-container banner-shortcode style-2">
                                 <div class="swiper-button-prev hidden"></div>
                                 <div class="swiper-button-next hidden"></div>
@@ -1249,12 +1250,11 @@
                                     <div class="swiper-slide">
                                         <div class="banner-shortcode style-2">
                                             <div class="content">
-                                                <div class="background" style="background-image: url('');"></div>
+                                                <div class="background" style="background-image: url('{{asset('public/images/store/store01.jpg')}}');"></div>
                                                 <div class="description valign-middle">
                                                     <div class="valign-middle-content">
-                                                        <div class="simple-article size-1 color"><a href="#">GADGETS</a></div>
-                                                        <div class="h4 light"><a href="#">cool sport gadget</a></div>
-                                                        <div class="banner-title color">- 35% OFF</div>
+                                                        <div class="simple-article size-1 color"><a href="#">ĐỨC THỎA</a></div>
+                                                        <div class="h4 light"><a href="#">UY TÍN - CHẤT LƯỢNG</a></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1263,12 +1263,11 @@
                                     <div class="swiper-slide">
                                         <div class="banner-shortcode style-2">
                                             <div class="content">
-                                                <div class="background" style="background-image: url('');"></div>
+                                                <div class="background" style="background-image: url('{{asset('public/images/store/store02.jpg')}}');"></div>
                                                 <div class="description valign-middle">
                                                     <div class="valign-middle-content">
-                                                        <div class="simple-article size-1 color"><a href="#">GADGETS</a></div>
-                                                        <div class="h4 light"><a href="#">cool sport gadget</a></div>
-                                                        <div class="banner-title color">- 35% OFF</div>
+                                                        <div class="simple-article size-1 color"><a href="#">ĐỨC THỎA</a></div>
+                                                        <div class="h4 light"><a href="#">UY TÍN - CHẤT LƯỢNG</a></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1277,12 +1276,11 @@
                                     <div class="swiper-slide">
                                         <div class="banner-shortcode style-2">
                                             <div class="content">
-                                                <div class="background" style="background-image: url('');"></div>
+                                                <div class="background" style="background-image: url('{{asset('public/images/store/store03.jpg')}}');"></div>
                                                 <div class="description valign-middle">
                                                     <div class="valign-middle-content">
-                                                        <div class="simple-article size-1 color"><a href="#">GADGETS</a></div>
-                                                        <div class="h4 light"><a href="#">cool sport gadget</a></div>
-                                                        <div class="banner-title color">- 35% OFF</div>
+                                                        <div class="simple-article size-1 color"><a href="#">ĐỨC THỎA</a></div>
+                                                        <div class="h4 light"><a href="#">UY TÍN - CHẤT LƯỢNG</a></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1291,12 +1289,11 @@
                                     <div class="swiper-slide">
                                         <div class="banner-shortcode style-2">
                                             <div class="content">
-                                                <div class="background" style="background-image: url('');"></div>
+                                                <div class="background" style="background-image: url('{{asset('public/images/store/store04.jpg')}}');"></div>
                                                 <div class="description valign-middle">
                                                     <div class="valign-middle-content">
-                                                        <div class="simple-article size-1 color"><a href="#">GADGETS</a></div>
-                                                        <div class="h4 light"><a href="#">cool sport gadget</a></div>
-                                                        <div class="banner-title color">- 35% OFF</div>
+                                                        <div class="simple-article size-1 color"><a href="#">ĐỨC THỎA</a></div>
+                                                        <div class="h4 light"><a href="#">UY TÍN - CHẤT LƯỢNG</a></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1309,231 +1306,23 @@
                             <div class="empty-space col-xs-b25 col-sm-b50"></div>
                         </div>
                         <div class="col-sm-6 col-md-12">
-                            <div class="h4 col-xs-b25">most viewed</div>
-                            <div class="product-shortcode style-4 clearfix">
-                                <a class="preview" href="#"><img src="" alt="" /></a>
-                                <div class="description">
-                                    <div class="simple-article color size-1 col-xs-b5"><a href="#">WIRELESS</a></div>
-                                    <h6 class="h6 col-xs-b10"><a href="#">wireless headphones</a></h6>
-                                    <div class="simple-article dark">$98.00</div>
+                            <div class="h4 col-xs-b25">Sản phẩm mới</div>
+                            @foreach ($product_new as $product)
+                                <div class="product-shortcode style-4 clearfix">
+                                    <a class="preview" href="#"><img src="{{url('storage/app/'.$product->images->first()->path_url) }}" alt="" /></a>
+                                    <div class="description">
+                                        <div class="simple-article color size-1 col-xs-b5"><a href="#">{{$product->sub_categories->description}}</a></div>
+                                        <h6 class="h6 col-xs-b10"><a href="#">{{$product->title}}</a></h6>
+                                        <div class="simple-article dark">{{$product->price}} VNĐ</div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-xs-b10"></div>
-                            <div class="product-shortcode style-4 clearfix">
-                                <a class="preview" href="#"><img src="" alt="" /></a>
-                                <div class="description">
-                                    <div class="simple-article color size-1 col-xs-b5"><a href="#">CASES</a></div>
-                                    <h6 class="h6 col-xs-b10"><a href="#">earphones case</a></h6>
-                                    <div class="simple-article dark">$12.00</div>
-                                </div>
-                            </div>
-                            <div class="col-xs-b10"></div>
-                            <div class="product-shortcode style-4 clearfix">
-                                <a class="preview" href="#"><img src="" alt="" /></a>
-                                <div class="description">
-                                    <div class="simple-article color size-1 col-xs-b5"><a href="#">CASES</a></div>
-                                    <h6 class="h6 col-xs-b10"><a href="#">headphones case</a></h6>
-                                    <div class="simple-article dark">$4.00</div>
-                                </div>
-                            </div>
-                            
+                                <div class="col-xs-b10"></div>
+                            @endforeach                            
                             <div class="empty-space col-xs-b25 col-sm-b50"></div>
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-sm-6 col-md-12">
-                            <div class="h4 col-xs-b25">feature products</div>
-                            <div class="swiper-container">
-                                <div class="swiper-button-prev hidden"></div>
-                                <div class="swiper-button-next hidden"></div>
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <div class="product-shortcode style-1 text-center">
-                                            <div class="title">
-                                                <div class="simple-article size-1 color col-xs-b5"><a href="#">LAPTOPS</a></div>
-                                                <div class="h6 animate-to-green"><a href="#">high-end spectre x360</a></div>
-                                            </div>
-                                            <div class="preview">
-                                                <img src="" alt="">
-                                                <div class="preview-buttons valign-middle">
-                                                    <div class="valign-middle-content">
-                                                        <a class="button size-2 style-2" href="#">
-                                                            <span class="button-wrapper">
-                                                                <span class="icon"><img src="" alt=""></span>
-                                                                <span class="text">Chi tiết</span>
-                                                            </span>
-                                                        </a>
-                                                        <a class="button size-2 style-3" href="#">
-                                                            <span class="button-wrapper">
-                                                                <span class="icon"><img src="" alt=""></span>
-                                                                <span class="text">Chọn mua</span>
-                                                            </span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="price">
-                                                <div class="simple-article size-4 dark">$950.00</div>
-                                            </div>
-                                            <div class="description">
-                                                <div class="simple-article text size-2">Mollis nec consequat at In feugiat mole stie tortor a malesuada</div>
-                                                <div class="icons">
-                                                    <a class="entry"><i class="fa fa-check" aria-hidden="true"></i></a>
-                                                    <a class="entry open-popup" data-rel="3"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                                    <a class="entry"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="empty-space col-xs-b60"></div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="product-shortcode style-1 text-center">
-                                            <div class="title">
-                                                <div class="simple-article size-1 color col-xs-b5"><a href="#">LAPTOPS</a></div>
-                                                <div class="h6 animate-to-green"><a href="#">high-end spectre x360</a></div>
-                                            </div>
-                                            <div class="preview">
-                                                <img src="" alt="">
-                                                <div class="preview-buttons valign-middle">
-                                                    <div class="valign-middle-content">
-                                                        <a class="button size-2 style-2" href="#">
-                                                            <span class="button-wrapper">
-                                                                <span class="icon"><img src="" alt=""></span>
-                                                                <span class="text">Chi tiết</span>
-                                                            </span>
-                                                        </a>
-                                                        <a class="button size-2 style-3" href="#">
-                                                            <span class="button-wrapper">
-                                                                <span class="icon"><img src="" alt=""></span>
-                                                                <span class="text">Chọn mua</span>
-                                                            </span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="price">
-                                                <div class="simple-article size-4 dark">$950.00</div>
-                                            </div>
-                                            <div class="description">
-                                                <div class="simple-article text size-2">Mollis nec consequat at In feugiat mole stie tortor a malesuada</div>
-                                                <div class="icons">
-                                                    <a class="entry"><i class="fa fa-check" aria-hidden="true"></i></a>
-                                                    <a class="entry open-popup" data-rel="3"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                                    <a class="entry"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="empty-space col-xs-b60"></div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="product-shortcode style-1 text-center">
-                                            <div class="title">
-                                                <div class="simple-article size-1 color col-xs-b5"><a href="#">LAPTOPS</a></div>
-                                                <div class="h6 animate-to-green"><a href="#">high-end spectre x360</a></div>
-                                            </div>
-                                            <div class="preview">
-                                                <img src="" alt="">
-                                                <div class="preview-buttons valign-middle">
-                                                    <div class="valign-middle-content">
-                                                        <a class="button size-2 style-2" href="#">
-                                                            <span class="button-wrapper">
-                                                                <span class="icon"><img src="" alt=""></span>
-                                                                <span class="text">Chi tiết</span>
-                                                            </span>
-                                                        </a>
-                                                        <a class="button size-2 style-3" href="#">
-                                                            <span class="button-wrapper">
-                                                                <span class="icon"><img src="" alt=""></span>
-                                                                <span class="text">Chọn mua</span>
-                                                            </span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="price">
-                                                <div class="simple-article size-4 dark">$950.00</div>
-                                            </div>
-                                            <div class="description">
-                                                <div class="simple-article text size-2">Mollis nec consequat at In feugiat mole stie tortor a malesuada</div>
-                                                <div class="icons">
-                                                    <a class="entry"><i class="fa fa-check" aria-hidden="true"></i></a>
-                                                    <a class="entry open-popup" data-rel="3"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                                    <a class="entry"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="empty-space col-xs-b60"></div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="product-shortcode style-1 text-center">
-                                            <div class="title">
-                                                <div class="simple-article size-1 color col-xs-b5"><a href="#">LAPTOPS</a></div>
-                                                <div class="h6 animate-to-green"><a href="#">high-end spectre x360</a></div>
-                                            </div>
-                                            <div class="preview">
-                                                <img src="" alt="">
-                                                <div class="preview-buttons valign-middle">
-                                                    <div class="valign-middle-content">
-                                                        <a class="button size-2 style-2" href="#">
-                                                            <span class="button-wrapper">
-                                                                <span class="icon"><img src="" alt=""></span>
-                                                                <span class="text">Chi tiết</span>
-                                                            </span>
-                                                        </a>
-                                                        <a class="button size-2 style-3" href="#">
-                                                            <span class="button-wrapper">
-                                                                <span class="icon"><img src="" alt=""></span>
-                                                                <span class="text">Chọn mua</span>
-                                                            </span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="price">
-                                                <div class="simple-article size-4 dark">$950.00</div>
-                                            </div>
-                                            <div class="description">
-                                                <div class="simple-article text size-2">Mollis nec consequat at In feugiat mole stie tortor a malesuada</div>
-                                                <div class="icons">
-                                                    <a class="entry"><i class="fa fa-check" aria-hidden="true"></i></a>
-                                                    <a class="entry open-popup" data-rel="3"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                                    <a class="entry"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="empty-space col-xs-b60"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-pagination"></div>
-                            </div>
-
-                            <div class="empty-space col-xs-b25 col-sm-b50"></div>
-                        </div>
-                        <div class="col-sm-6 col-md-12">
-                            <div class="h4 col-xs-b25">latest post</div>
-                            <div class="row m5 text-center">
-                                <div class="blog-shortcode style-1">
-                                    <a href="#" class="preview simple-mouseover"><img src="" alt="" /></a>
-                                    <div class="description">
-                                        <div class="simple-article size-1 grey col-xs-b5">APR 07 / 15 &nbsp;&nbsp;&nbsp;<a href="#" class="color">GADGETS</a></div>
-                                        <h6 class="h6 col-xs-b10"><a href="#">Phasellus rhoncus in</a></h6>
-                                        <div class="simple-article size-2">Etiam mollis tristique mi ac ultrices. Morbi vel neque eget lacus</div>
-                                    </div>
-                                </div>
-                                
-                                <div class="blog-shortcode style-1">
-                                    <a href="#" class="preview simple-mouseover"><img src="" alt="" /></a>
-                                    <div class="description">
-                                        <div class="simple-article size-1 grey col-xs-b5">APR 07 / 15 &nbsp;&nbsp;&nbsp;<a href="#" class="color">GADGETS</a></div>
-                                        <h6 class="h6 col-xs-b10"><a href="#">Phasellus rhoncus in</a></h6>
-                                        <div class="simple-article size-2">Etiam mollis tristique mi ac ultrices. Morbi vel neque eget lacus</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="empty-space col-xs-b25 col-sm-b50"></div>
-                        </div>
-                    </div>
+                    
 
                 </div>
             </div>

@@ -15,8 +15,8 @@
                         </ol>
                     </nav>
                 </div> -->
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addProduct" style="float: right;">
-					 Thêm sản phẩm
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addProduct" style="float: right;margin-bottom: 10px; margin-top: 30px;">
+					<i class="fas fa-plus"></i> Thêm sản phẩm
 				</button>
                 <div class="form-group has-error">
                     @if ( $errors->any() )
@@ -31,29 +31,41 @@
         </div>
     </div>
     <div class="row">
-    	@foreach($products as $product)
-    	<div class="col-xs-12 col-ms-6 col-md-3">
-    		<div class="one-product">
-                <div class="delete-product">
-                    <a href="{{route('admin.deleteProduct',['id'=>$product->id])}}"><i class="fas fa-times"></i></a>
-                </div>
-    			<div class="title">
-                    <h3><a href="{{route('admin.editProduct',['id'=>$product->id])}}">{{$product->title}}</a></h3>
-                </div>
-                <div class="img-product">
-                    <img src="{{$product->picture}}">
-                </div>
-                <div class="group-price">
-                    <p>Giá nhập: {{number_format($product->price_in)}}</p>
-                    <p>Giá bán: {{number_format($product->price)}}</p>
-                </div>
-                <div class="description-product">
-                    <h4>Mô tả</h4>
-                    <p>{{$product->sort_description}}</p>
-                </div>
-    		</div>
-    	</div>
-    	@endforeach
+        <div class="col-md-12">
+            <table class="table table-bordered" style="text-align: center;">
+                <thead>
+                    <tr>
+                        <th style="max-width: 50px">Mã SP</th>
+                        <th>Tên sản phẩm</th>
+                        <th>Hình ảnh</th>
+                        <th>Giá nhập</th>
+                        <th>Giá bán</th>
+                        <th>Mô tả</th>
+                        <th>Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($products as $product)
+                        <tr>
+                            <td>{{$product->id}}</td>
+                            <td><a href="{{route('product.getDetailProduct',['id'=>$product->slug])}}">{{$product->title}}</a></td>
+                            <td><img src="{{url('storage/app/'.$product->images->first()->path_url) }}" style="width: 80px; height: auto;"></td>
+                            <td>{{number_format($product->price_in)}}</td>
+                            <td>{{number_format($product->price)}}</td>
+                            <td><?php echo substr(strip_tags($product->description),0,100) ;?></td>
+                            <td>
+                                <a href="{{route('admin.editProduct',['id'=>$product->id])}}">
+                                    <span class="edit-product"><i class="fas fa-edit"></i></span>
+                                </a>
+                                <a href="{{route('admin.deleteProduct',['id'=>$product->id])}}">
+                                    <span class="delete-product"><i class="fas fa-trash"></i></span>
+                                </a>                                
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
 <!-- Modal -->
