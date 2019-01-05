@@ -510,6 +510,9 @@
             padding-top: 20px;
             padding-left: 20px;
         }
+        .detail-description .content-description img{
+            max-width: 100%
+        }
         .detail-description .content-description p{
             padding-top: 10px;
             line-height: 1.5;
