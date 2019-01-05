@@ -140,7 +140,7 @@
                                         </div>
                                         <div class="description">
                                             <div class="simple-article text size-2">
-                                                {{$product->sort_description}}
+                                                <?php echo substr(strip_tags($product->description),0,100) ; ?>
                                             </div>                                        
                                         </div>
                                     </div>  
