@@ -117,7 +117,7 @@
                                             <div class="h6 animate-to-green"><a href="{{route('product.getDetailProduct',['id'=>$product->slug])}}">{{$product->title}}</a></div>
                                         </div>
                                         <div class="preview">
-                                            <img src="{{$product->picture}}" alt="{{$product->title}}" />
+                                            <img src="{{url('storage/app/'.$product->images->first()->path_url) }}" alt="{{$product->title}}" />
                                             <div class="preview-buttons valign-middle">
                                                 <div class="valign-middle-content">
                                                     <a class="button size-2 style-2" href="#">
