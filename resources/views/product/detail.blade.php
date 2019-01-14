@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('title')
-    {{$product->description}}
+    {{$product->title}}
 @endsection
 @section('content')
     <div class="grey-background">
@@ -12,26 +12,25 @@
                     <section class="info-product-sc">
                         <div class="row">
                             <div class="col-sm-6 col-xs-b30 col-sm-b0">
-                                
                                 <div class="main-product-slider-wrapper swipers-couple-wrapper">
                                     <div class="swiper-container swiper-control-top">
-                                       <div class="swiper-button-prev hidden"></div>
-                                       <div class="swiper-button-next hidden"></div>
-                                       <div class="swiper-wrapper">
+                                        <div class="swiper-button-prev hidden"></div>
+                                        <div class="swiper-button-next hidden"></div>
+                                        <div class="swiper-wrapper">
                                             @foreach($product->images as $image)
                                             <div class="swiper-slide">
                                                 <div class="swiper-lazy-preloader"></div>
                                                 <div class="product-big-preview-entry swiper-lazy" data-background="{{url('storage/app/'.$image->path_url) }}"></div>
                                             </div>
                                             @endforeach
-                                       </div>
+                                        </div>
                                     </div>
 
                                     <div class="empty-space col-xs-b30 col-sm-b60"></div>
                                     <div class="swiper-container swiper-control-bottom" data-breakpoints="1" data-xs-slides="3" data-sm-slides="3" data-md-slides="4" data-lt-slides="4" data-slides-per-view="5" data-center="1" data-click="1">
-                                       <div class="swiper-button-prev hidden"></div>
-                                       <div class="swiper-button-next hidden"></div>
-                                       <div class="swiper-wrapper">
+                                        <div class="swiper-button-prev hidden"></div>
+                                        <div class="swiper-button-next hidden"></div>
+                                        <div class="swiper-wrapper">
                                             @foreach($product->images as $image)
                                                 <div class="swiper-slide">
                                                     <div class="product-small-preview-entry">
@@ -39,7 +38,7 @@
                                                     </div>
                                                 </div>
                                             @endforeach
-                                       </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
