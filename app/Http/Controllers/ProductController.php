@@ -4,43 +4,43 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Http\Request;
-use App\Category;
-use App\Product;
 use App\Cart;
 use App\Order;
 use App\DetailOrder;
 use Auth;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Response;
+use App\Repositories\ProductRepositoriesInterface;
+use App\Repositories\CategoryRepositoriesInterface;
 use Session;
 use App\Http\Requests\CheckCartCheckout;
 class ProductController extends Controller
-{
+{   
+    protected $product;
+    protected $category;
+    public function __construct(ProductRepositoriesInterface $product,
+        CategoryRepositoriesInterface $category){
+        $this->product = $product;
+        $this->category = $category;
+    }
 	public function getIndex()
     {
-        $categories = Category::with('subcategories')->get();
-        //$subcategories = SubCategory::all();
-        $products = Product::all();
-        $product_new = Product::take(3)->orderBy('id','DESC')->get();
-        // $orders = Auth::user()->orders;
-        // $orders->transform(function($order,$key){
-        //     $order->cart = unserialize($order->cart);
-        //     return $order;
-        // });
+        $categories = $this->category->all();
+        $products = $this->product->all();
+        $product_new = $this->product->orderBy(4,'id','DESC');
         return view('index',['categories' => $categories,'products' => $products,'product_new'=>$product_new]);
     }
     function getDetailProduct($id){
-        $product = Product::findBySlug($id);
-        $categories = Category::with('subcategories')->get();
+        $product = $this->product->findBy('slug',$id);
+        $categories = $this->category->all();
         return view('product.detail',['product' => $product,'categories' => $categories]);
     }
     function getAddToCart(Request $request, $id){
         //$id = intval($id);
-    	$product = Product::find($id);
+    	$product =$this->product->find($id);
     	$oldCart = Session::has('cart') ? Session::get('cart') : null;
     	$cart = new Cart($oldCart);
     	$cart->add($product,$product->id);
-
     	$request->session()->put('cart',$cart);
     	// //dd(Session::get('cart'));
     	// return redirect()->route('main');
