@@ -26,9 +26,9 @@ class ProductController extends Controller
 	public function getIndex()
     {
         $categories = $this->category->all();
-        $products = $this->product->all();
-        $product_new = $this->product->orderBy(4,'id','DESC');
-        return view('index',['categories' => $categories,'products' => $products,'product_new'=>$product_new]);
+        $products = $this->product->orderBy(9,'id','DESC');
+        
+        return view('index',['categories' => $categories,'products' => $products]);
     }
     function getDetailProduct($id){
         $product = $this->product->findBy('slug',$id);
