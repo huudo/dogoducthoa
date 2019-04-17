@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Cart;
 use App\Order;
 use App\DetailOrder;
+use App\SubCategory;
 use Auth;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Response;
@@ -111,6 +112,12 @@ class ProductController extends Controller
     function getSearchName(Request $request){
         $products = Product::where('title', 'like', '%' . $request->value . '%')->get();
         return response()->json($products); 
+    }
+    function getCategory($id){
+        $subCategory = SubCategory::with('products')->find($id);
+        $title = $subCategory->name;
+        //$products = $subCategory->products;
+        return view('product.subCategory',['subCategory' => $subCategory,'title' => $title]);
     }
 }
 

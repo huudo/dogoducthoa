@@ -82,6 +82,10 @@ Route::get('/search/name',[
 	'uses' => 'ProductController@getSearchName',
 	'as' => 'product.searchName'
 ]);
+Route::get('categories/{id}',[
+	'uses' => 'ProductController@getCategory',
+	'as'=>'product.getCategory'
+];)
 // Route::get('/admin',[
 // 	'uses' => 'AdminController@getAdminPage',
 // 	'as' => 'admin'

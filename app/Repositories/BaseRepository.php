@@ -22,7 +22,6 @@ class BaseRepository implements BaseRepositoriesInterface
 		}else{
 			return $instance->find($value);
 		}
-		
 	}
 	public function orderBy($number,$variable,$sort){
 		$instance = $this->getNewInstance();
