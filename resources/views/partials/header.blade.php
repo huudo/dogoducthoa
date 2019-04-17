@@ -1,3 +1,7 @@
+<?php 
+    use App\Category;
+    $categories = Category::all();
+?>
 <header>
     <div class="header-top">
         <div class="content-margins">

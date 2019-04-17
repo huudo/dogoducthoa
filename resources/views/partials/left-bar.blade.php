@@ -12,7 +12,7 @@ $product_new = Product::offset(0)->limit(4)->orderBY('id','DESC')->get();
         @foreach($categories as $category)
             @foreach($category->subcategories as $sub)                           
             <li>
-                <a href="#">{{$sub->description}}</a>
+                <a href="{{route('product.getCategory',['id' =>$sub->id])}}">{{$sub->description}}</a>
             </li>
             @endforeach
         @endforeach
