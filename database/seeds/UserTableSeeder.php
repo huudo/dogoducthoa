@@ -30,8 +30,8 @@ class UserTableSeeder extends Seeder
         $admin->name = 'Admin';
         $admin->address = 'Ha Noi';
         $admin->phone = '0936399358';
-        $admin->email = 'blacasavn@gmail.com';
-        $admin->password = bcrypt('admin');
+        $admin->email = 'longkhang.tb@gmail.com';
+        $admin->password = bcrypt('dgdtadmin@123');
         $admin->save();
         $admin->roles()->attach($role_admin);
     }

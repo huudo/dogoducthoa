@@ -9,4 +9,5 @@ interface BaseRepositoriesInterface{
 	//public function update($id, $data);
 	//public function delete($id);
 	public function findBy($type, $value);
+	public function rand($number);
 }

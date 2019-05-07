@@ -28,8 +28,8 @@ class ProductController extends Controller
     {
         $categories = $this->category->all();
         $products = $this->product->orderBy(9,'id','DESC');
-        
-        return view('index',['categories' => $categories,'products' => $products]);
+        $hot_products = $this->product->rand(4);
+        return view('index',['categories' => $categories,'products' => $products,'hot_products' => $hot_products]);
     }
     function getDetailProduct($id){
         $product = $this->product->findBy('slug',$id);

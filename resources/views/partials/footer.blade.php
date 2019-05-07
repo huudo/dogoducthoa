@@ -4,13 +4,13 @@
         <div class="footer-top">
             <div class="row">
                 <div class="col-sm-6 col-md-3 col-xs-b30 col-md-b0">
-                    <img src="#" alt="" />
+                    <img id="logo" src="{{asset('public/images/logo.png')}}" alt="Đồ gỗ Đức Thỏa - Thái Bình" />
                     <div class="empty-space col-xs-b20"></div>
-                    <div class="simple-article size-2 light fulltransparent">Integer posuere orci sit amet feugiat pellent que. Suspendisse vel tempor justo, sit amet posuere orci dapibus auctor</div>
+                    <div class="simple-article size-2 light fulltransparent">Đồ gỗ Đức Thỏa, cung cấp các sản phẩm đồ gỗ chất lượng cao, uy tín. Bán bàn ghế, tủ, giường, trường kỷ gỗ đẹp, bền </div>
                     <div class="empty-space col-xs-b20"></div>
-                    <div class="footer-contact"><i class="fa fa-mobile" aria-hidden="true"></i> contact us: <a href="tel:+35235551238745">+3  (523) 555 123 8745</a></div>
-                    <div class="footer-contact"><i class="fa fa-envelope-o" aria-hidden="true"></i> email: <a href="mailto:office@exzo.com">office@exzo.com</a></div>
-                    <div class="footer-contact"><i class="fa fa-map-marker" aria-hidden="true"></i> address: <a href="#">1st, new york, usa</a></div>
+                    <div class="footer-contact"><i class="fa fa-mobile" aria-hidden="true"></i> Liên hệ: <a href="tel:0986131268">0986 131 268</a></div>
+                    <div class="footer-contact"><i class="fa fa-envelope"></i> Email: <a href="mailto:longkhang.tb@gmail.com">longkhang.tb@gmail.com</a></div>
+                    <div class="footer-contact"><i class="fa fa-map-marker" aria-hidden="true"></i> Địa chỉ: <a href="#">Lô 6 cụm làng nghề Nguyên Xá, Vũ Thư, Thái Bình</a></div>
                 </div>
                 <div class="col-sm-6 col-md-3 col-xs-b30 col-md-b0">
                     <h6 class="h6 light">queck links</h6>

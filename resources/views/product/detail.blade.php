@@ -26,7 +26,6 @@
                                         </div>
                                     </div>
 
-                                    <div class="empty-space col-xs-b30 col-sm-b60"></div>
                                     <div class="swiper-container swiper-control-bottom" data-breakpoints="1" data-xs-slides="3" data-sm-slides="3" data-md-slides="4" data-lt-slides="4" data-slides-per-view="5" data-center="1" data-click="1">
                                         <div class="swiper-button-prev hidden"></div>
                                         <div class="swiper-button-next hidden"></div>
@@ -58,13 +57,13 @@
                                 </div>
                                 <div class="row col-xs-b40">
                                     <div class="col-sm-3">
-                                        <div class="h6 detail-data-title size-1">quantity:</div>
+                                        <div class="h6 detail-data-title size-1">Số lượng:</div>
                                     </div>
                                     <div class="col-sm-9">
                                         <div class="quantity-select">
-                                            <span class="minus"></span>
+                                            <span class="minus2"></span>
                                             <span class="number">1</span>
-                                            <span class="plus"></span>
+                                            <span class="plus2"></span>
                                         </div>
                                     </div>
                                 </div>
@@ -77,16 +76,8 @@
                                             </span>
                                         </a>
                                     </div>
-                                    <div class="col-sm-6">
-                                        <a class="button size-2 style-1 block noshadow" href="#">
-                                            <span class="button-wrapper">
-                                                <span class="icon"><i class="fa fa-heart-o" aria-hidden="true"></i></span>
-                                                <span class="text">add to favourites</span>
-                                            </span>
-                                        </a>
-                                    </div>
                                 </div>
-                                <div class="row">
+                                <!-- <div class="row">
                                     <div class="col-sm-3">
                                         <div class="h6 detail-data-title size-2">share:</div>
                                     </div>
@@ -99,7 +90,7 @@
                                             <a class="entry" href="#"><i class="fa fa-pinterest-p"></i></a>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </section>
@@ -120,25 +111,21 @@
                     </section>
                     <div class="empty-space col-xs-b35 col-md-b70"></div>
 
-                    <div class="swiper-container rounded">
-                        <div class="swiper-button-prev style-1 hidden"></div>
-                        <div class="swiper-button-next style-1 hidden"></div>
-                        <div class="swiper-wrapper">
+                    <div class="swiper-container arrows-align-top">
+                        <div class="h4 swiper-title">Ảnh sản xuất</div>
+                        <div class="empty-space col-xs-b20"></div>
+                        <div class="swiper-button-prev style-1"></div>
+                        <div class="swiper-button-next style-1"></div>
+                        <div class="swiper-wrapper album-store">
                             <div class="swiper-slide">
                                 <div class="banner-shortcode style-1">
-                                    <div class="background" style="background-image: url();"></div>
+                                    <div class="background" style="background-image: url({{asset('public/images/store/sx000.jpg')}});"></div>
                                     <div class="description valign-middle">
                                         <div class="valign-middle-content">
-                                            <div class="simple-article size-3 light fulltransparent">DON'T MISS!</div>
-                                            <div class="banner-title color">UP TO 70%</div>
-                                            <div class="h4 light">best android tv box</div>
-                                            <div class="empty-space col-xs-b25"></div>
-                                            <a class="button size-1 style-3" href="#">
-                                                <span class="button-wrapper">
-                                                    <span class="icon"><img src="" alt=""></span>
-                                                    <span class="text">learn more</span>
-                                                </span>
-                                            </a>
+                                            <div class="simple-article size-3 light fulltransparent">ĐỒ GỖ</div>
+                                            <div class="banner-title">CHẤT LƯỢNG</div>
+                                            <div class="h4 light">Cửa hàng bán đồ gỗ uy tín</div>
+                                            <div class="empty-space col-xs-b50"></div>
                                         </div>
                                         <div class="empty-space col-xs-b60 col-sm-b0"></div>
                                     </div>
@@ -146,26 +133,48 @@
                             </div>
                             <div class="swiper-slide">
                                 <div class="banner-shortcode style-1">
-                                    <div class="background" style="background-image: url();"></div>
+                                    <div class="background" style="background-image: url({{asset('public/images/store/sx02.jpg')}});"></div>
                                     <div class="description valign-middle">
                                         <div class="valign-middle-content">
-                                            <div class="simple-article size-3 light fulltransparent">DON'T MISS!</div>
-                                            <div class="banner-title color">UP TO 70%</div>
-                                            <div class="h4 light">best android tv box</div>
-                                            <div class="empty-space col-xs-b25"></div>
-                                            <a class="button size-1 style-3" href="#">
-                                                <span class="button-wrapper">
-                                                    <span class="icon"><img src="" alt=""></span>
-                                                    <span class="text">learn more</span>
-                                                </span>
-                                            </a>
+                                            <div class="simple-article size-3 light fulltransparent">ĐỒ GỖ</div>
+                                            <div class="banner-title">CHẤT LƯỢNG</div>
+                                            <div class="h4 light">Cửa hàng bán đồ gỗ uy tín</div>
+                                            <div class="empty-space col-xs-b50"></div>
+                                        </div>
+                                        <div class="empty-space col-xs-b60 col-sm-b0"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="banner-shortcode style-1">
+                                    <div class="background" style="background-image: url({{asset('public/images/store/sx0031.jpg')}});"></div>
+                                    <div class="description valign-middle">
+                                        <div class="valign-middle-content">
+                                            <div class="simple-article size-3 light fulltransparent">ĐỒ GỖ</div>
+                                            <div class="banner-title">CHẤT LƯỢNG</div>
+                                            <div class="h4 light">Cửa hàng bán đồ gỗ uy tín</div>
+                                            <div class="empty-space col-xs-b50"></div>
+                                        </div>
+                                        <div class="empty-space col-xs-b60 col-sm-b0"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="banner-shortcode style-1">
+                                    <div class="background" style="background-image: url({{asset('public/images/store/sx0033.jpg')}});"></div>
+                                    <div class="description valign-middle">
+                                        <div class="valign-middle-content">
+                                            <div class="simple-article size-3 light fulltransparent">ĐỒ GỖ</div>
+                                            <div class="banner-title">CHẤT LƯỢNG</div>
+                                            <div class="h4 light">Cửa hàng bán đồ gỗ uy tín</div>
+                                            <div class="empty-space col-xs-b50"></div>
                                         </div>
                                         <div class="empty-space col-xs-b60 col-sm-b0"></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="swiper-pagination"></div>
+                        <div class="swiper-pagination visible-xs"></div>
                     </div>
 
                     <div class="empty-space col-xs-b35 col-md-b70"></div>

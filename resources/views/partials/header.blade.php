@@ -43,7 +43,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-3 col-sm-1 col-md-3">
-                    <a id="logo" href="index1.html"><img src="#" alt="" /></a>  
+                    <a id="logo" href="{{route('main')}}">
+                        <img src="{{asset('public/images/logo.png')}}" alt="Đồ gỗ Đức Thỏa - Thái Bình" />
+                    </a>  
                 </div>
                 <div class="col-xs-9 col-sm-11 text-right col-md-9">
                     <div class="nav-wrapper">
@@ -62,7 +64,8 @@
                                     <div class="megamenu">
                                         <div class="links">
                                             @foreach($categories as $category)
-                                                @foreach($category->subcategories as $sub)                    <a href="#">{{$sub->description}}</a>
+                                                @foreach($category->subcategories as $sub)                    
+                                                <a href="#">{{$sub->description}}</a>
                                                 @endforeach
                                             @endforeach
                                         </div>

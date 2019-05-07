@@ -431,7 +431,13 @@ header{position: fixed; left: 0; top: 0; width: 100%; z-index: 10; -webkit-backf
 .header-empty-space{height: 159px;}
 .header-top a, .header-top a .fa, .header-top a b{transition: all .15s; -webkit-transition: all .15s;}
 .header-top a:hover, .header-top a:hover .fa, .header-top a:hover b{color: #CCC;}
-#logo{display: inline-block; vertical-align: top; height: 60px; position: relative; top: 50%; margin-top: -30px;}
+#logo{    display: inline-block;
+    vertical-align: top;
+    height: 100px;
+    position: relative;
+    top: 50%;
+    margin-top: -51px;
+}
 #logo img{display: block; max-height: 100%; width: auto;}
 .header-top{font-size: 0; background: #823905; height: 60px; border-bottom: 1px #eee solid;}
 .header-top b{font-family: 'Open Sans', sans-serif; font-weight: 700; color: #fff;}
@@ -832,6 +838,14 @@ span.pagination{border: none;}
 .slider-wrapper.side-borders:before{position: absolute; left: 0; top: 0; width: 2px; height: 100%; background: #f7f7f7; border-right: 1px #fff solid; content: ""; z-index: 2;}
 .slider-wrapper.side-borders:after{position: absolute; right: 0; top: 0; width: 2px; height: 100%; background: #f7f7f7; border-left: 1px #fff solid; content: ""; z-index: 2;}
 .product-shortcode.noframe{border: none!important;}
+.slider-wrapper .swiper-slide h1{
+	color: #fff !important;
+	text-shadow: 2px 2px #6d6d6d;
+}
+.slider-wrapper .swiper-slide .white{
+	color: #fff !important;
+	text-shadow: 1px 1px #4c4c4c;
+}
 /*Phones (<768px)*/
 @media (max-width: 767px) {
 	.row.nopadding .product-shortcode{margin-left: 0;}
@@ -1053,10 +1067,12 @@ span.pagination{border: none;}
 /*Phones (<768px)*/
 @media (max-width: 767px) {
 	.banner-shortcode.style-1{padding-bottom: 0;}
-	.banner-shortcode.style-1 .background{position: relative; padding-bottom: 40%;}
+	.banner-shortcode.style-1 .background{padding-bottom: 40%;}
 	.banner-shortcode.style-1 .description{padding: 20px 15px; background: #2c2c2c; text-align: center; border-top: 1px #555 solid; display: block;}
 }
-
+.album-store .banner-title {
+	color: #fff !important
+}
 /*shortcode 2*/
 .banner-shortcode.style-2{position: relative; overflow: hidden; text-align: center; max-width: 270px;}
 .banner-shortcode.style-2 .content{padding-bottom: 155%;}

@@ -27,6 +27,10 @@ class BaseRepository implements BaseRepositoriesInterface
 		$instance = $this->getNewInstance();
 		return $instance->take($number)->orderBy($variable,$sort)->get();
 	}
+	public function rand($number){
+		$instance = $this->getNewInstance();
+		return $instance->orderByRaw('RAND()')->take(4)->get();
+	}
 	protected function getNewInstance(){
 		$model = $this->model;
 		return  $model;
