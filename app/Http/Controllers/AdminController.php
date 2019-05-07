@@ -9,6 +9,7 @@ use App\Product;
 use App\ProductImage;
 use App\Order;
 use App\DetailOrder;
+use App\News;
 use Auth;
 use App\Http\Requests\CheckMerchandiseRequest;
 use App\Http\Requests\CheckCreateProduct;
@@ -206,4 +207,24 @@ class AdminController extends Controller
         return redirect()->back();
     }
 
+    public function getCreateNews(){
+        $news = News::all();
+        return view('admin.create_news',['news' => $news]);
+    }
+    public function postCreateNews(Request $request){
+        $this->new->addNews($request);
+        return redirect()->back();
+    }
+    public function getEditNews($slug){
+        $new = $this->new->getBySlug($slug);
+        return view('admin.edit_news',['new'=>$new]);
+    }
+    public function postEditNews(Request $request,$id){
+        $this->new->editNews($request,$id);
+        return redirect()->back();
+    }
+    public function deleteNews($id){
+        $this->new->deleteNews($id);
+        return redirect()->back();
+    }
 }

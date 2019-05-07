@@ -191,4 +191,24 @@ Route::prefix('admin')->group(function () {
 		'middleware' => 'roles',
 		'roles' => ['Admin']
 	]);
+	Route::get('/news/create',[
+		'uses' => 'AdminController@getCreateNews',
+		'as' => 'admin.createNews'
+	]);
+	Route::post('/news/create',[
+		'uses' => 'AdminController@postCreateNews',
+		'as' => 'admin.createNews'
+	]);
+	Route::get('/news/edit/{slug}',[
+		'uses' => 'AdminController@getEditNews',
+		'as' => 'admin.editNews'
+	]);
+	Route::post('/news/edit/{slug}',[
+		'uses' => 'AdminController@postEditNews',
+		'as' => 'admin.editNews'
+	]);
+	Route::get('/news/delete/{id}',[
+		'uses' => 'AdminController@deleteNews',
+		'as' => 'admin.deleteNews'
+	]);
 });
