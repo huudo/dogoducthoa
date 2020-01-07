@@ -92,7 +92,7 @@ $product_new = Product::offset(0)->limit(4)->orderBY('id','DESC')->get();
                     <a class="preview" href="#"><img src="{{url('storage/app/'.$product->images->first()->path_url) }}" alt="" /></a>
                     <div class="description">
                         <div class="simple-article color size-1 col-xs-b5"><a href="#">{{$product->sub_categories->description}}</a></div>
-                        <h6 class="h6 col-xs-b10"><a href="#">{{$product->title}}</a></h6>
+                        <h6 class="h6 col-xs-b10"><a href="{{route('product.getDetailProduct',['id'=>$product->slug])}}">{{$product->title}}</a></h6>
                         <div class="simple-article dark">{{$product->price}} VNĐ</div>
                     </div>
                 </div>

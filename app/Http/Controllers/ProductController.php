@@ -8,6 +8,7 @@ use App\Cart;
 use App\Order;
 use App\DetailOrder;
 use App\SubCategory;
+use App\Product;
 use Auth;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Response;
@@ -27,7 +28,7 @@ class ProductController extends Controller
 	public function getIndex()
     {
         $categories = $this->category->all();
-        $products = $this->product->orderBy(9,'id','DESC');
+        $products = Product::orderBy('id','DESC')->paginate(3);
         $hot_products = $this->product->rand(4);
         return view('index',['categories' => $categories,'products' => $products,'hot_products' => $hot_products]);
     }
@@ -87,7 +88,7 @@ class ProductController extends Controller
             $order_detail->save();
         }
         Session::forget('cart');
-        return redirect()->route('main');
+        return redirect()->route('success');
     }
     function getPlusToCart($id){
     	$oldCart = Session::has('cart') ? Session::get('cart') : null ;
@@ -118,6 +119,9 @@ class ProductController extends Controller
         $title = $subCategory->name;
         //$products = $subCategory->products;
         return view('product.subCategory',['subCategory' => $subCategory,'title' => $title]);
+    }
+    function getSucccess(){
+        return view('success');
     }
 }
 

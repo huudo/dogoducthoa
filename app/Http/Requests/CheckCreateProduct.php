@@ -28,7 +28,7 @@ class CheckCreateProduct extends FormRequest
             'price-in' => 'required',
             'price' => 'required',
             'description' => 'required',
-            'photos.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:1024'
+            'photos.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:10240'
         ];
         return $rules;
     }

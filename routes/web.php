@@ -10,7 +10,12 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/clear-cache', function() {
+    $exitCode = Artisan::call('config:clear');
+    $exitCode = Artisan::call('cache:clear');
+    $exitCode = Artisan::call('config:cache');
+    return 'DONE'; //Return anything
+});
 Route::get('/',[
 	'uses' => 'ProductController@getIndex',
 	'as' => 'main'
@@ -51,6 +56,14 @@ Route::get('/product/{id}',[
 	'uses' => 'ProductController@getDetailProduct',
 	'as' => 'product.getDetailProduct'
 ]);
+Route::get('/news',[
+	'uses' => 'AppController@getNews',
+	'as' => 'news'
+]);
+Route::get('/news/{slug}',[
+	'uses' => 'AppController@getNewsDetail',
+	'as' => 'newsDetail'
+]);
 Route::get('/add-to-cart/{id}',[
 	'uses' => 'ProductController@getAddToCart',
 	'as' => 'product.addToCart'
@@ -77,7 +90,10 @@ Route::get('/list-orders',[
 	'middleware' => 'roles',
 	'roles' => ['User','Admin']
 ]);
-
+Route::get('/success',[
+	'uses' => 'ProductController@getSucccess',
+	'as' => 'success'
+]);
 Route::get('/search/name',[
 	'uses' => 'ProductController@getSearchName',
 	'as' => 'product.searchName'

@@ -1,4 +1,8 @@
 <!-- FOOTER -->
+<?php 
+    use App\News;
+    $newsFooter = News::take(3)->orderBy('id','DESC')->get();
+?>
 <footer>
     <div class="container">
         <div class="footer-top">
@@ -12,74 +16,27 @@
                     <div class="footer-contact"><i class="fa fa-envelope"></i> Email: <a href="mailto:longkhang.tb@gmail.com">longkhang.tb@gmail.com</a></div>
                     <div class="footer-contact"><i class="fa fa-map-marker" aria-hidden="true"></i> Địa chỉ: <a href="#">Lô 6 cụm làng nghề Nguyên Xá, Vũ Thư, Thái Bình</a></div>
                 </div>
-                <div class="col-sm-6 col-md-3 col-xs-b30 col-md-b0">
-                    <h6 class="h6 light">queck links</h6>
-                    <div class="empty-space col-xs-b20"></div>
-                    <div class="footer-column-links">
-                        <div class="row">
-                            <div class="col-xs-6">
-                                <a href="#">home</a>
-                                <a href="#">about us</a>
-                                <a href="#">products</a>
-                                <a href="#">services</a>
-                                <a href="#">blog</a>
-                                <a href="#">gallery</a>
-                                <a href="#">contact</a>
-                            </div>
-                            <div class="col-xs-6">
-                                <a href="#">privacy policy</a>
-                                <a href="#">warranty</a>
-                                <a href="#">login</a>
-                                <a href="#">registration</a>
-                                <a href="#">delivery</a>
-                                <a href="#">pages</a>
-                                <a href="#">our stores</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div class="clear visible-sm"></div>
                 <div class="col-sm-6 col-md-3 col-xs-b30 col-sm-b0">
-                    <h6 class="h6 light">some posts</h6>
+                    <h6 class="h6 light">Bài viết</h6>
                     <div class="empty-space col-xs-b20"></div>
+                    @foreach($newsFooter as $new)
                     <div class="footer-post-preview clearfix">
-                        <a class="image" href="#"><img src="#" alt="" /></a>
+                        <a class="image" href="{{route('newsDetail',['slug' => $new->slug])}}">
+                            <img src="{{url('public/uploads/'.$new->path_url) }}" alt="{{$new->name}}" />
+                        </a>
                         <div class="description">
-                            <div class="date">apr 07 / 15</div>
-                            <a class="title">Fusce tincidunt accumsan pretium sit amet</a>
+                            <div class="date">{{$new->created_at}}</div>
+                            <a class="title">{{$new->name}}</a>
                         </div>
                     </div>
-                    <div class="footer-post-preview clearfix">
-                        <a class="image" href="#"><img src="#" alt="" /></a>
-                        <div class="description">
-                            <div class="date">apr 07 / 15</div>
-                            <a class="title">Fusce tincidunt accumsan pretium sit amet</a>
-                        </div>
-                    </div>
-                    <div class="footer-post-preview clearfix">
-                        <a class="image" href="#"><img src="#" alt="" /></a>
-                        <div class="description">
-                            <div class="date">apr 07 / 15</div>
-                            <a class="title">Fusce tincidunt accumsan pretium sit amet</a>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
-                <div class="col-sm-6 col-md-3">
-                    <h6 class="h6 light">popular tags</h6>
+                <div class="col-sm-6 col-md-6">
+                    <h6 class="h6 light">Bản đồ</h6>
                     <div class="empty-space col-xs-b20"></div>
-                    <div class="tags clearfix">
-                        <a class="tag">headphoness</a>
-                        <a class="tag">accessories</a>
-                        <a class="tag">new</a>
-                        <a class="tag">wireless</a>
-                        <a class="tag">cables</a>
-                        <a class="tag">devices</a>
-                        <a class="tag">gadgets</a>
-                        <a class="tag">brands</a>
-                        <a class="tag">replacements</a>
-                        <a class="tag">cases</a>
-                        <a class="tag">cables</a>
-                        <a class="tag">professional</a>
+                    <div class="map-area">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12578.62388321654!2d106.28715078910176!3d20.39742901423173!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135e384b1549f9b%3A0x50176fd7c732a62c!2zTmd1ecOqbiBYw6EsIFbFqSBUaMawIERpc3RyaWN0LCBUaGFpIEJpbmgsIFZpZXRuYW0!5e0!3m2!1sen!2s!4v1557288695608!5m2!1sen!2s" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>

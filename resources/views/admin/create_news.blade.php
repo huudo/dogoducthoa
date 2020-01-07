@@ -1,6 +1,12 @@
 @extends('admin.layouts.admin')
 @section('content')
-    
+<style type="text/css">
+    .list-menu img{
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+    }
+</style>
 <div class="container-fluid  dashboard-content">
     
     <div class="page-header">
@@ -13,19 +19,20 @@
                 <table class="table table-bordered">
                     <thead>
                       <tr>
-                        <th>Tên</th>
+                        
                         <th>Ảnh đại diện</th>
+                        <th>Tiêu đề</th>
                         <th>Thao tác</th>
                       </tr>
                     </thead>
                     <tbody>
                     @foreach($news as $new)
-                        <tr>
-                            <td>
-                                {{$new->name}}
-                            </td>
+                        <tr>                            
                             <td>
                                 <img src="{{asset('public/uploads/'.$new->path_url)}}">
+                            </td>
+                            <td>
+                                {{$new->name}}
                             </td>
                             <td>
                                 <a href="{{route('admin.deleteNews',['id' => $new->id])}}"><i class="fa fa-trash-alt"></i></a>

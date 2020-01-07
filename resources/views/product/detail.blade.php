@@ -1,6 +1,18 @@
 @extends('layouts.master')
+@section('meta-tag')
+<?php 
+    $img = $product->images;
+    $imgContent = $img[0];
+?>
+    <meta property="og:url"   content="{{route('product.getDetailProduct',['id' => $product->id])}}" />
+    <meta property="og:type"  content="Sản phẩm" />
+    <meta property="og:title" content="{{$product->title}}" />
+    <meta property="og:description" content=" <?php echo substr(strip_tags($product->description),0,300) ;?>" />
+    <meta property="og:image" content="{{url('storage/app/'.$imgContent->path_url)}}" />
+@endsection
 @section('title')
     {{$product->title}}
+
 @endsection
 @section('content')
     <div class="grey-background">
@@ -48,9 +60,6 @@
                                     <div class="col-sm-6">
                                         <div class="simple-article size-5 grey">GIÁ: <span class="color">{{number_format($product->price,0)}} VNĐ</span></div>        
                                     </div>
-                                    <div class="col-sm-6 col-sm-text-right">
-                                        <div class="simple-article size-3 col-xs-b20">AVAILABLE.: <span class="grey">YES</span></div>
-                                    </div>
                                 </div>
                                 <div class="simple-article size-3 col-xs-b30">
                                     <?php echo substr(strip_tags($product->description),0,300) ;?>
@@ -69,28 +78,28 @@
                                 </div>
                                 <div class="row m5 col-xs-b40">
                                     <div class="col-sm-6 col-xs-b10 col-sm-b0">
-                                        <a class="button size-2 style-2 block" href="#">
+                                        <a class="button size-2 style-3 add-to-card" href="#" data-href="/add-to-cart/5">
                                             <span class="button-wrapper">
-                                                <span class="icon"><img src="" alt=""></span>
-                                                <span class="text">add to cart</span>
+                                                <span class="icon"><i class="fa fa-cart-plus"></i></span>
+                                                <span class="text">Chọn mua</span>
                                             </span>
                                         </a>
                                     </div>
                                 </div>
-                                <!-- <div class="row">
+                                <div class="row">
                                     <div class="col-sm-3">
-                                        <div class="h6 detail-data-title size-2">share:</div>
+                                        <div class="h6 detail-data-title size-2">Chia sẻ:</div>
                                     </div>
                                     <div class="col-sm-9">
-                                        <div class="follow light">
-                                            <a class="entry" href="#"><i class="fa fa-facebook"></i></a>
-                                            <a class="entry" href="#"><i class="fa fa-twitter"></i></a>
-                                            <a class="entry" href="#"><i class="fa fa-linkedin"></i></a>
-                                            <a class="entry" href="#"><i class="fa fa-google-plus"></i></a>
-                                            <a class="entry" href="#"><i class="fa fa-pinterest-p"></i></a>
+                                        <div class="follow light" style="padding-top: 5px;">
+                                           <!-- Your share button code -->
+                                              <div class="fb-share-button" 
+                                                data-href="{{route('product.getDetailProduct',['id' => $product->id])}}" 
+                                                data-layout="button_count">
+                                              </div>
                                         </div>
                                     </div>
-                                </div> -->
+                                </div>
                             </div>
                         </div>
                     </section>
@@ -186,6 +195,18 @@
             </div>
         </div>
     </div>
+        <!-- Load Facebook SDK for JavaScript -->
+    <!-- Load Facebook SDK for JavaScript -->
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+
+
     <style type="text/css">
         .categories-menu{
             background: #fff;

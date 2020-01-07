@@ -132,6 +132,12 @@
                                     </div>  
                                 </div>
                                 @endforeach
+
+                            </div>
+                            <div class="row nopadding">
+                                <div class="pagination-row" style="text-align: center;">
+                                    {{ $products->links() }}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -245,13 +251,13 @@
                                     <div class="empty-space col-xs-b20"></div>
                                     <div class="preview-buttons">
                                         <div class="buttons-wrapper">
-                                            <a class="button size-2 style-2" href="#">
+                                            <a class="button size-2 style-2" href="{{route('product.getDetailProduct',['id'=>$product->slug])}}">
                                                 <span class="button-wrapper">
                                                     <span class="icon"><img src="" alt=""></span>
                                                     <span class="text">Chi tiết</span>
                                                 </span>
                                             </a>
-                                            <a class="button size-2 style-3" href="#">
+                                            <a class="button size-2 style-3 add-to-card" href="#" data-href = "/add-to-cart/{{$product->id}}">
                                                 <span class="button-wrapper">
                                                     <span class="icon"><img src="" alt=""></span>
                                                     <span class="text">Chọn mua</span>
@@ -267,6 +273,7 @@
                     </div>
                     <div class="empty-space col-xs-b35 col-md-b70"></div>
                 </div>
+
                 <div class="col-md-3 col-md-pull-9 hidden-xs">
                     @include('partials.left-bar')
                 </div>

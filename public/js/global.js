@@ -372,6 +372,7 @@ $(".add-to-card").on('click', function(e) {
             	$('header').removeClass('scrolled');
             }
             $('.cart-label').html(msg);
+            $("#myModal").modal('show');
         },
         error: function (data) {
             console.log('Error:', data);

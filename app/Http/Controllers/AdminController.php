@@ -16,10 +16,10 @@ use App\Http\Requests\CheckCreateProduct;
 use App\Http\Requests\CheckCreateShipment;
 class AdminController extends Controller
 {
-	public function __construct()
+	public function __construct(News $new)
     {
         //$this->middleware('auth');
-        ///$this->roles(['Admin']);
+        $this->news = $new;
     }
 
     public function getAdminPage(){
@@ -212,7 +212,7 @@ class AdminController extends Controller
         return view('admin.create_news',['news' => $news]);
     }
     public function postCreateNews(Request $request){
-        $this->new->addNews($request);
+        $this->news->addNews($request);
         return redirect()->back();
     }
     public function getEditNews($slug){
