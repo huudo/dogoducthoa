@@ -7,8 +7,8 @@
         <div class="content-margins">
             <div class="row">
                 <div class="col-md-5 hidden-xs hidden-sm">
-                    <div class="entry"><b>Liên hệ:</b> <a href="tel:0986131268">0986 131 268</a></div>
-                    <div class="entry"><b>email:</b> <a href="mailto:longkhang.tb@gmail.com">longkhang.tb@gmail.com</a></div>
+                    <div class="entry"><b>Liên hệ:</b> <a href="tel:0904075992">0904 075 992</a></div>
+                    <div class="entry"><b>email:</b> <a href="mailto:longkhang.tb@gmail.com">hienltt.hust@gmail.com</a></div>
                 </div>
                 <div class="col-md-7 col-md-text-right">
                     @if(!Auth::check())

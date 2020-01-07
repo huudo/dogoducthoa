@@ -8,7 +8,7 @@
         <div class="footer-top">
             <div class="row">
                 <div class="col-sm-6 col-md-3 col-xs-b30 col-md-b0">
-                    <img id="logo" src="{{asset('public/images/logo.png')}}" alt="Đồ gỗ Đức Thỏa - Thái Bình" />
+                    <img id="logo" src="{{asset('public/images/logo-white.png')}}" alt="Đồ gỗ Đức Thỏa - Thái Bình" />
                     <div class="empty-space col-xs-b20"></div>
                     <div class="simple-article size-2 light fulltransparent">Đồ gỗ Đức Thỏa, cung cấp các sản phẩm đồ gỗ chất lượng cao, uy tín. Bán bàn ghế, tủ, giường, trường kỷ gỗ đẹp, bền </div>
                     <div class="empty-space col-xs-b20"></div>
