@@ -14,7 +14,7 @@
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="cell-view page-height">
-                                    <div class="col-xs-b40 col-sm-b80"></div>
+                                    
                                     <div data-swiper-parallax-x="-500">
                                         <h1 class="h1">Bền đẹp - Chất lượng</h1>
                                         <div class="title-underline left"><span></span></div>
@@ -39,7 +39,7 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="col-xs-b40 col-sm-b80"></div>
+                                    <div class="col-xs-b80 col-sm-b80"></div>
                                 </div>
                             </div>
                         </div>
@@ -91,12 +91,12 @@
         <div class="empty-space col-xs-b20 col-sm-b30"></div>
         <div class="container">
             <div class="row">
-                <div class="col-md-9 col-md-push-3">
+                <div class="col-md-10 col-sm-12 col-md-push-2">
                     <div class="tabs-block">
                         <div class="tab-entry visible">
                             <div class="row nopadding">
                                 @foreach ($products as $product)
-                                <div class="col-sm-4">
+                                <div class="col-sm-3 col-md-2">
                                     <div class="product-shortcode style-1">
                                         <div class="title">
                                             <!-- <div class="simple-article size-1 color col-xs-b5"><a href="#">{{$product->title}}</a></div> -->
@@ -273,8 +273,7 @@
                     </div>
                     <div class="empty-space col-xs-b35 col-md-b70"></div>
                 </div>
-
-                <div class="col-md-3 col-md-pull-9 hidden-xs">
+                <div class="col-md-2 col-md-pull-10 col-sm-pull-12 hidden-sm">
                     @include('partials.left-bar')
                 </div>
             </div>

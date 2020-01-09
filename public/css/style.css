@@ -858,9 +858,9 @@ span.pagination{border: none;}
 }
 
 /*shortcode 1*/
-.product-shortcode.style-1{border: 1px #f6dbc8 solid; padding: 15px 20px 5px 20px; background: #fff; overflow: hidden; box-shadow: 0 0 1px 1px rgba(20,23,28,.1), 0 3px 1px 0 rgba(20,23,28,.1);}
-.product-shortcode.style-1 .title{height: 30px; margin-bottom: 10px;}
-.product-shortcode.style-1 .description{height: 60px; overflow: hidden; position: relative;}
+.product-shortcode.style-1{border: 1px #f6dbc8 solid; padding: 10px 5px; background: #fff; overflow: hidden; box-shadow: 0 0 1px 1px rgba(20,23,28,.1), 0 3px 1px 0 rgba(20,23,28,.1);}
+.product-shortcode.style-1 .title{height: 30px;}
+.product-shortcode.style-1 .description{height: 40px; overflow: hidden; position: relative;}
 .product-shortcode.style-1 .description .text{transition: all .3s; -webkit-transition: all .3s;}
 .product-shortcode.style-1 .description .icons{position: absolute; left: 0; top: 0; width: 100%; height: 100%; font-size: 0; opacity: 0; transform: translateY(100%); -webkit-transform: translateY(100%); transition: all .3s; -webkit-transition: all .3s;}
 .product-shortcode .icons .entry{width: 30px; height: 30px; border: 1px #eee solid; border-radius: 50%; -webkit-border-radius: 50%; display: inline-block; vertical-align: bottom; text-align: center; line-height: 28px; color: #979797; transition: all .15s; -webkit-transition: all .15s; font-size: 16px; margin: 0 5px 5px 0;}
@@ -868,7 +868,7 @@ span.pagination{border: none;}
 .product-shortcode .icons .entry .fa{display: block; line-height: inherit;}
 .product-shortcode.style-1 .price{height: 36px; overflow: hidden; position: relative;}
 .product-shortcode.style-1 .price .simple-article{line-height: 18px;}
-.product-shortcode.style-1 .preview{position: relative; margin-bottom: 30px;}
+.product-shortcode.style-1 .preview{position: relative; margin-bottom: 10px;}
 .product-shortcode.style-1 .preview img{width: 100%; height: 180px; object-fit: cover;display: block; margin: 0 auto;}
 .product-shortcode.style-1 .preview-buttons, .product-shortcode.style-7 .preview-buttons{position: absolute; left: 50%; margin-left: -100px; top: 0; width: 200px; height: 100%; text-align: center; transition: all .3s; -webkit-transition: all .3s; opacity: 0;}
 .product-shortcode.style-1 .preview-buttons .button, .product-shortcode.style-7 .preview-buttons .button{min-width: 135px; margin-bottom: 10px; transition: opacity .3s, left 0s .3s; transition: all .3s; -webkit-transition: all .3s;}
